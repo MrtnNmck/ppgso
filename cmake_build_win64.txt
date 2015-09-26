@@ -1,4 +1,22 @@
- cmake .. -DGLFW_INCLUDE_DIR="C:\Programs\GLFW\glfw
+# Assumptions:
+#
+# Visual Studio 2013 (if not, exchange -G"Visual Studio 12 Win64" for other generator from cmake --help)
+#
+# glfw-3.1.1.bin.WIN64 in C:\Programs\GLFW\
+# glew-1.13.0 in C:\Programs\GLEW\
+# glm in C:\Programs\GLM\
+#
+# To run glew gl_texture / gl_radiant, you need to:
+#	 To use the shared library version of GLEW, you need to copy the headers and libraries into their destination directories. On Windows this typically boils down to copying:
+#				bin/glew32.dll	    	to    	%SystemRoot%/system32
+#				lib/glew32.lib	    	to    	{VC Root}/Lib
+#				include/GL/glew.h	    to    	{VC Root}/Include/GL
+#				include/GL/wglew.h	    to    	{VC Root}/Include/GL
+#	 where {VC Root} is the Visual C++ root directory, typically C:/Program Files/Microsoft Visual Studio/VC98 for Visual Studio 6.0 or C:/Program Files/Microsoft Visual Studio .NET 2003/Vc7/PlatformSDK 
+#	 for Visual Studio .NET.
+#	 Source: http://glew.sourceforge.net/install.html
+
+cmake .. -DGLFW_INCLUDE_DIR="C:\Programs\GLFW\glfw
 -3.1.1.bin.WIN64\include" -DGLFW_LIBRARIES="C:\Programs\GLFW\glfw-3.1.1.bin.WIN64\lib-vc2013\glfw
 3.lib" -DGLFW_INCLUDE_DIRS="C:\Programs\GLFW\glfw-3.1.1.bin.WIN64\include" -DGLEW_INCLUDE_DIR="C:
 \Programs\GLEW\glew-1.13.0\include" -DGLEW_LIBRARY="C:\Programs\GLEW\glew-1.13.0\lib\Release\x64\
