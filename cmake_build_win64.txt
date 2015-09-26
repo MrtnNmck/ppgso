@@ -1,0 +1,6 @@
+ cmake .. -DGLFW_INCLUDE_DIR="C:\Programs\GLFW\glfw
+-3.1.1.bin.WIN64\include" -DGLFW_LIBRARIES="C:\Programs\GLFW\glfw-3.1.1.bin.WIN64\lib-vc2013\glfw
+3.lib" -DGLFW_INCLUDE_DIRS="C:\Programs\GLFW\glfw-3.1.1.bin.WIN64\include" -DGLEW_INCLUDE_DIR="C:
+\Programs\GLEW\glew-1.13.0\include" -DGLEW_LIBRARY="C:\Programs\GLEW\glew-1.13.0\lib\Release\x64\
+glew32s.lib" -DGLM_INCLUDE_DIR="C:\Programs\GLM\glm\glm" -G"Visual Studio 12 Win64" -DCMAKE_INSTAL
+L_PREFIX="../_install"
