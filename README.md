@@ -18,6 +18,7 @@ sudo apt-get install libglew-dev libglfw3-dev libglm-dev
 On OSX install [Homebrew][4] package manager and install
 
 ```bash
+brew tap homebrew/versions
 brew install glm glfw3 glew
 ```
 
@@ -29,7 +30,7 @@ Building using make
 Recommended for OSX and Linux is to simply use make. For Windows see next section.
 
 ```bash
-cd ppgso/src
+cd ppgso-master
 make
 ./gl_gradient
 ```
@@ -41,10 +42,29 @@ Windows is a special case as always, however it is a lot easier if you avoid Vis
 
 * Download and install [TDM64][5], this is the latest GCC compiler for Windows in a nice installer.
 * Download [CLion IDE][6], the trial is free for 30days and you can register for a FREE COPY using university mail.
-* Run CLion and open this directory as project, it should be ready to go.
-* For some examples you need to set working directory to the project folder.
+* Run CLion and select TDM64 as the toolchain (default is C:/TDM64..)
+* Setup the rest of the settings as you see fit.
+* Open this directory as an existing project, the examples should now build.
+* For some examples you need to set working directory to the project folder as well.
 
 A good alternative IDE for Windows is [QTCreator][7] that should work out of the box with TDM64 and CMake. For other IDEs see below.
+
+Common pitfalls
+---
+* NEVER store projects in paths and directories that contain spaces or non-ascii characters.
+* If you are unfortunate enough to have a username with non-ascii characters builds will fail unless you edit CLion configuration manually.
+
+```
+# Edit idea.properties file in CLion install directory and add
+idea.system.path=C:/clion/system
+# Make sure the directory exists
+```
+
+* Ubuntu 14.04 based distributions do not have GLFW3!
+  * Install [libglfw3 deb][8] then install [libglfw3-dev][9] 
+
+* My linux does not have OpenGL. Missing -lGL
+  * Try to install `mesa-common-dev`, `libgl1-mesa-dev` and `libglu1-mesa-dev`
 
 Generic instructions using CMake, should work with Visual Studio
 ----
@@ -81,3 +101,5 @@ cd ppgso/_install
 [5]: http://tdm-gcc.tdragon.net
 [6]: https://www.jetbrains.com/clion/
 [7]: http://www.qt.io/ide/
+[8]: http://launchpadlibrarian.net/173940430/libglfw3_3.0.4-1_amd64.deb
+[9]: http://launchpadlibrarian.net/173940431/libglfw3-dev_3.0.4-1_amd64.deb
