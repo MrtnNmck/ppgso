@@ -51,6 +51,14 @@ target_link_libraries( gl_animate ${LIBRARIES} )
 
 install ( TARGETS gl_animate DESTINATION . )
 
+
+# gl_window
+add_executable ( gl_window Tutorials/OpenWindow/gl_window.cpp)
+target_link_libraries( gl_window ${LIBRARIES} )
+
+install ( TARGETS gl_window DESTINATION . )
+
+
 # ADD YOUR PROJECT HERE
 #add_executable( my_project my_project.cpp my_project_other.cpp )
 #target_link_libraries( my_project ${LIBRARIES} )

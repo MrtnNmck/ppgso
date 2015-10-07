@@ -1,6 +1,7 @@
 // The not so short but relatively simple re-creation of raw_gradient in OpenGL 3
 // Instead of relying on a file output this example opens up a GLFW window
 // GLEW makes sure we have access to OpenGL functionality on runtime
+
 #include <iostream>
 #include <vector>
 #include <string>

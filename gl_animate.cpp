@@ -56,7 +56,7 @@ GLuint ShaderProgram(const std::string &vertex_shader_file, const std::string &f
   glGetShaderiv(fragment_shader_id, GL_COMPILE_STATUS, &result);
   if (result == GL_FALSE) {
     glGetShaderiv(fragment_shader_id, GL_INFO_LOG_LENGTH, &info_length);
-    std::string fragment_shader_log((unsigned long)info_length, ' ');
+    std::string fragment_shader_log((unsigned long) info_length, ' ');
     glGetShaderInfoLog(fragment_shader_id, info_length, NULL, &fragment_shader_log[0]);
     std::cout << fragment_shader_log << std::endl;
   }
